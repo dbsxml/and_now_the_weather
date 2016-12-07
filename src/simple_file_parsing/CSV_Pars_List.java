@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class CSV_Pars_List {
 
-	File csvIn = null;
+	private File csvIn = null;
 	ArrayList<String> rows = new ArrayList<>();					//rows from .csv
 	ArrayList<String> entries = new ArrayList<>();				//entries (values) from columns 
 	ArrayList<CSV_Item> csvItemsList = new ArrayList<>();		//list of parsed objects
@@ -28,6 +28,9 @@ public class CSV_Pars_List {
 
 		Scanner s = new Scanner(csvIn);
 
+		CSV_Item item = new CSV_Item();
+		
+//		item.getValueOf(CSV_Item.WBANNO);		
 		while (s.hasNext()) { // read strings from .csv into list "rows"
 			rows.add(s.nextLine());
 		}

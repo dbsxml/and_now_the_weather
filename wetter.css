@@ -1,0 +1,51 @@
+body{
+	background-color: green;
+}
+
+.table{
+
+	background-color: #333333;
+	color: #FFFFFF;
+	border: 1px solid #000000;
+
+	min-width: 1294px;
+	max-width: 1294px;
+
+}
+
+.tablehead{
+	display: flex;
+	flex-direction: row;
+
+	background-color: #777777;
+	font-weight: bold;
+}
+
+.tablerow{
+	display: flex;
+	flex-direction: row;
+}
+
+.hour{
+	min-width: 40px;
+	max-width: 40px;
+	padding: 5px;
+
+	border: 1px solid #000000;
+}
+
+.day{
+	min-width: 40px;
+	max-width: 40px;
+	padding: 2px;
+
+	border: 1px solid #000000;
+}
+
+.invisible{
+	display: none;
+}
+
+.visible{
+	display: block;
+}

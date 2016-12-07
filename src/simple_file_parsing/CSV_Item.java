@@ -1,5 +1,7 @@
 package simple_file_parsing;
 
+import java.util.HashMap;
+
 public class CSV_Item {
 
 	/*
@@ -7,149 +9,149 @@ public class CSV_Item {
 	 *  there are 38 entries (1-38 )per row. furthermore it has 
 	 *  an itemID
 	 */
-	
+	private HashMap hash = new HashMap();
 //0  item ID
-	int itemID;
+	private int itemID;
 	
 //1    WBANNO  [5 chars]  cols 1 -- 5 
 //       The station WBAN number.
-	String WBANNO;
+	private  String WBANNO = "wbanno";
 
 	//2    UTC_DATE  [8 chars]  cols 7 -- 14 
 //       The UTC date of the observation.
-	String UTC_DATE;
+	private  String UTC_DATE;
 
 //3    UTC_TIME  [4 chars]  cols 16 -- 19 
 //       The UTC time of the observation. Time is the end of the observed 
 //       hour, so the 0000 hour is actually the last hour of the previous 
 //       day's observation (starting just after 11:00 PM through midnight).
-	String UTC_TIME;
+	private  String UTC_TIME;
 
 //4    LST_DATE  [8 chars]  cols 21 -- 28 
 //       The Local Standard Time (LST) date of the observation.
-	String LST_DATE;
+	private  String LST_DATE;
 //5    LST_TIME  [4 chars]  cols 30 -- 33 
 //       The Local Standard Time (LST) time of the observation. Time is the 
 //       end of the observed hour (see UTC_TIME description).
-	String LST_TIME;
+	private  String LST_TIME;
 //6    CRX_VN  [6 chars]  cols 35 -- 40 
 //       The version number of the station datalogger program that was in 
 //       effect at the time of the observation. Note: This field should be 
 //       treated as text (i.e. string).
-	String CRX_VN;
+	private  String CRX_VN;
 //7    LONGITUDE  [7 chars]  cols 42 -- 48 
 //       Station longitude, using WGS-84.
-	String LONGITUDE;
+	private  String LONGITUDE;
 //8    LATITUDE  [7 chars]  cols 50 -- 56 
 //       Station latitude, using WGS-84.
-	String LATITUDE;
+	private  String LATITUDE;
 //9    T_CALC  [7 chars]  cols 58 -- 64 
 //       Average air temperature, in degrees C, during the last 5 minutes 
 //       of the hour. See Note F.
-	String T_CALC;
+	private  String T_CALC;
 //10   T_HR_AVG  [7 chars]  cols 66 -- 72 
 //       Average air temperature, in degrees C, for the entire hour. See Note 
 //       F.
-	String T_HR_AVG;
+	private  String T_HR_AVG;
 //11   T_MAX  [7 chars]  cols 74 -- 80 
 //       Maximum air temperature, in degrees C, during the hour. See Note 
 //       F.
-	String T_MAX;
+	private  String T_MAX;
 //12   T_MIN  [7 chars]  cols 82 -- 88 
 //       Minimum air temperature, in degrees C, during the hour. See Note 
 //       F.
-	String T_MIN;
+	private  String T_MIN;
 //13   P_CALC  [7 chars]  cols 90 -- 96 
 //       Total amount of precipitation, in mm, recorded during the hour. See 
 //       Note F.
-	String P_CALC;
+	private  String P_CALC;
 //14   SOLARAD  [6 chars]  cols 98 -- 103 
 //       Average global solar radiation, in watts/meter^2.
-	String SOLARAD;
+	private  String SOLARAD;
 //15   SOLARAD_FLAG  [1 chars]  cols 105 -- 105 
 //       QC flag for average global solar radiation. See Note G.
-	String  SOLARAD_FLAG;
+	private  String  SOLARAD_FLAG;
 //16   SOLARAD_MAX  [6 chars]  cols 107 -- 112 
 //       Maximum global solar radiation, in watts/meter^2.
-	String SOLARAD_MAX;
+	private  String SOLARAD_MAX;
 //17   SOLARAD_MAX_FLAG  [1 chars]  cols 114 -- 114 
 //       QC flag for maximum global solar radiation. See Note G.
-	String SOLARAD_MAX_FLAG;
+	private  String SOLARAD_MAX_FLAG;
 //18   SOLARAD_MIN  [6 chars]  cols 116 -- 121 
 //       Minimum global solar radiation, in watts/meter^2.
-	String SOLARAD_MIN;
+	private  String SOLARAD_MIN;
 //19   SOLARAD_MIN_FLAG  [1 chars]  cols 123 -- 123 
 //       QC flag for minimum global solar radiation. See Note G.
-	String SOLARAD_MIN_FLAG;
+	private  String SOLARAD_MIN_FLAG;
 //20   SUR_TEMP_TYPE  [1 chars]  cols 125 -- 125 
 //       Type of infrared surface temperature measurement: 'R' denotes raw 
 //       (uncorrected), 'C' denotes corrected, and 'U' when unknown/missing. 
 //       See Note H.
-	String SUR_TEMP_TYPE;
+	private  String SUR_TEMP_TYPE;
 //21   SUR_TEMP  [7 chars]  cols 127 -- 133 
 //       Average infrared surface temperature, in degrees C. See Note H.
-	String SUR_TEMP;
+	private  String SUR_TEMP;
 //22   SUR_TEMP_FLAG  [1 chars]  cols 135 -- 135 
 //       QC flag for infrared surface temperature. See Note G.
-	String SUR_TEMP_FLAG;
+	private  String SUR_TEMP_FLAG;
 //23   SUR_TEMP_MAX  [7 chars]  cols 137 -- 143 
 //       Maximum infrared surface temperature, in degrees C.
-	String SUR_TEMP_MAX;
+	private  String SUR_TEMP_MAX;
 //24   SUR_TEMP_MAX_FLAG  [1 chars]  cols 145 -- 145 
 //       QC flag for infrared surface temperature maximum. See Note G.
-	String SUR_TEMP_MAX_FLAG;
+	private  String SUR_TEMP_MAX_FLAG;
 //25   SUR_TEMP_MIN  [7 chars]  cols 147 -- 153 
 //       Minimum infrared surface temperature, in degrees C.
-	String SUR_TEMP_MIN;
+	private  String SUR_TEMP_MIN;
 //26   SUR_TEMP_MIN_FLAG  [1 chars]  cols 155 -- 155 
 //       QC flag for infrared surface temperature minimum. See Note G.
-	String SUR_TEMP_MIN_FLAG;
+	private  String SUR_TEMP_MIN_FLAG;
 //27   RH_HR_AVG  [5 chars]  cols 157 -- 161 
 //       RH average for hour, in percentage. See Note I.
-	String RH_HR_AVG;
+	private  String RH_HR_AVG;
 //28   RH_HR_AVG_FLAG  [1 chars]  cols 163 -- 163 
 //       QC flag for RH average. See Note G.
-	String RH_HR_AVG_FLAG;
+	private  String RH_HR_AVG_FLAG;
 //29   SOIL_MOISTURE_5  [7 chars]  cols 165 -- 171 
 //       Average soil moisture at 5 cm below the surface, in m^3/m^3. See 
 //       Note K.
-	String SOIL_MOISTURE_5;
+	private  String SOIL_MOISTURE_5;
 //30   SOIL_MOISTURE_10  [7 chars]  cols 173 -- 179 
 //       Average soil moisture at 10 cm below the surface, in m^3/m^3. See 
 //       Note K.
-	String SOIL_MOISTURE_10;
+	private  String SOIL_MOISTURE_10;
 //31   SOIL_MOISTURE_20  [7 chars]  cols 181 -- 187 
 //       Average soil moisture at 20 cm below the surface, in m^3/m^3. See 
 //       Note K.
-	String SOIL_MOISTURE_20;
+	private  String SOIL_MOISTURE_20;
 //32   SOIL_MOISTURE_50  [7 chars]  cols 189 -- 195 
 //       Average soil moisture at 50 cm below the surface, in m^3/m^3. See 
 //       Note K.
-	String SOIL_MOISTURE_50;
+	private static String SOIL_MOISTURE_50;
 //33   SOIL_MOISTURE_100  [7 chars]  cols 197 -- 203 
 //       Average soil moisture at 100 cm below the surface, in m^3/m^3. See 
 //       Note K.
-	String SOIL_MOISTURE_100;
+	private  String SOIL_MOISTURE_100;
 //34   SOIL_TEMP_5  [7 chars]  cols 205 -- 211 
 //       Average soil temperature at 5 cm below the surface, in degrees C. 
 //       See Note K.
-	String SOIL_TEMP_5;
+	private static String SOIL_TEMP_5;
 //35   SOIL_TEMP_10  [7 chars]  cols 213 -- 219 
 //       Average soil temperature at 10 cm below the surface, in degrees C. 
 //       See Note K.
-	String SOIL_TEMP_10;
+	private  String SOIL_TEMP_10;
 //36   SOIL_TEMP_20  [7 chars]  cols 221 -- 227 
 //       Average soil temperature at 20 cm below the surface, in degrees C. 
 //       See Note K.
-	String SOIL_TEMP_20;
+	private  String SOIL_TEMP_20;
 //37   SOIL_TEMP_50  [7 chars]  cols 229 -- 235 
 //       Average soil temperature at 50 cm below the surface, in degrees C. 
 //       See Note K.
-	String SOIL_TEMP_50;
+	private  String SOIL_TEMP_50;
 //38   SOIL_TEMP_100  [7 chars]  cols 237 -- 243 
 //       Average soil temperature at 100 cm below the surface, in degrees 
 //       C. See Note K.
-	String SOIL_TEMP_100;
+	private String SOIL_TEMP_100;
 
 	
 	public int getItemID() {
